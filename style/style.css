@@ -35,3 +35,15 @@ height: 50px;
   color: antiquewhite;
   
   }  
+table{
+
+border: 1px solid black;
+border-collapse: collapse;
+}
+ th, td{
+  text-align: center;  
+  width:200px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+    
