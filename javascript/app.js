@@ -2,6 +2,7 @@
 
 let salmonProfiles = document.getElementById('salmonProfiles');
 let table = document.getElementById('salesTable');
+let formSubmit = document.getElementById('formLocation');
 
 let hour= ['','6am', '7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','Daily Location Total'];
 let nameCountry=['Seatil', 'Tokyo','Dubai','Paris','Lima'];
@@ -46,14 +47,8 @@ function createHeader(){
  }
 }
       
-Country.prototype.render= function() {
-      
-  // 
-    //  let div = document.createElement('div');
-    //  salmonProfiles.appendChild(div);
-  
-    //   let table = document.createElement('table');
-    //   div.appendChild(table);
+Country.prototype.render= function() {  
+
       let tr=document.createElement('tr');
       table.appendChild(tr);
       let td =document.createElement('td');
@@ -67,11 +62,16 @@ Country.prototype.render= function() {
         td.setAttribute("style", "width: 70px;text-align:center;");
       }
       td.textContent=`${Math.ceil(this.Total)}`
-      //table.setAttribute("border", "1","style","border-collapse: collapse");
+      
     
 };
 
-  
+function deleteRow(r) {
+  let i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("salesTable").deleteRow(i);
+}
+
+
 function createFooter(){
   let tr=document.createElement('tr');
   table.appendChild(tr);
@@ -102,7 +102,31 @@ function createFooter(){
 }
  
 
- createHeader(); 
+ createHeader();
+ 
+ function getDataForm(event){
+  event.preventDefault();
+  let name = event.target.nameLocation.value;
+  let max =  parseFloat(event.target.maxCustomer.value);
+  let min = parseFloat(event.target.minCustomer.value);
+  let avg =parseFloat(event.target.avargCustomer.value);
+
+  
+let newLocation = new Country(name,min,max,avg);
+
+newLocation.getCookiesPerHour();
+
+table.deleteRow(Country.totalCookiesForEachCountry.length);
+newLocation.render();
+createFooter();
+
+
+}
+
+formSubmit.addEventListener('submit', getDataForm);
+
+
+ 
 let seatil = new Country(nameCountry[0], 23,65,6.3);
 seatil.getRandomCoustmer();
 seatil.getCookiesPerHour();
@@ -125,5 +149,5 @@ paris.render();
 let lima = new Country(nameCountry[4], 2,16,4.6);
 lima.getCookiesPerHour();
 lima.render();
-createFooter();
 
+createFooter();

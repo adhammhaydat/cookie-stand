@@ -7,6 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
+    <style>
+        #table{
+
+border: 1px solid black;
+border-collapse: collapse;
+}
+ th, td{
+  text-align: center;  
+  width:200px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+    </style>
 </head>
 <body>
     <header>
@@ -39,10 +52,11 @@
                 <li> Paris</li>
                 <li> Lima</li>
             </ol>
+            
         </section>
         <section style="margin: 10px;padding: 10px;">
             <h2>Hours open</h2>
-            <table>
+            <table id="table">
                  <tr>
                 <th>Location:</th>
                 <th>Hours open</th>
@@ -87,6 +101,5 @@
             
         </section>
     </main>
-   
 </body>
 </html>
