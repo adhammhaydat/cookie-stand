@@ -5,22 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        table, th, td {
-      border: 1px solid black;
-     border-collapse: collapse;
-}
+    <link rel="stylesheet" href="./style/reset.css">
+    <style> 
+        body{
+            background-color: bisque;
+           margin: 0px ;
+        }
+        header{
+            width: 100%;
+            display: inline-block;
+            background-color: black;
+            color:cornsilk;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        header h1{
+            text-align: center;
+
+        }
+        main{
+            display: grid;
+            grid-template-rows: 300px 1fr;
+            text-align: center;
+            justify-content: center;
+        }
+        table{
+            background-color: rgb(54, 20, 7);
+        }
+        table, th, td { 
+         color: aliceblue;   
+        border: 1px solid rgb(219, 210, 210);
+        border-collapse: collapse;
+        }
+        div button{
+            width: 200px;
+            height: 50px;
+
+        }
+
     </style>
 </head>
 <body>
-    <h1>Sales Page</h1>
-    <div id="salmonProfiles"></div>
+    <header>
+        
+        <h1>Sales Page</h1>
+    </header>
+    <main>
+    
+    <div id="salmonProfiles">
     <table id="salesTable">
 
     </table>
-<div style="margin: 10px;">
-    <button style="background-color: black;"><a style="color: cornsilk;text-decoration: none;" href="./index.html"> back to home page</a></button>
-</div>
+        </div>
+        <div><button style="background-color: black;"><a style="color:
+         cornsilk;text-decoration: none;" href="./index.html"> back to home page</a></button>
+</main>
+<footer>
+
+</footer>
 </body>
 <script src="./javascript/app.js"></script>
 </html>
