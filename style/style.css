@@ -1,5 +1,9 @@
-body{margin: 0px;
-    background-color:whitesmoke;}
+body{
+
+  margin: 0px;
+  background-color:whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  }
   
   header{
   width: 100%;  
@@ -81,4 +85,13 @@ button{
   background-color: black;
   color: white;
   cursor: pointer;
+}
+h2,p{
+  font-family: 'Benne', serif;
+}
+footer{
+  width: 100%;
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
 }

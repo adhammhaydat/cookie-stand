@@ -119,6 +119,7 @@ newLocation.getCookiesPerHour();
 table.deleteRow(Country.totalCookiesForEachCountry.length);
 newLocation.render();
 createFooter();
+document.getElementById('formLocation').reset();
 
 
 }
